@@ -1,11 +1,11 @@
+import { Exercise } from 'src/exercises/entities/exercise.entity';
+import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 import { User } from 'src/user/entities/user.entity';
 import {
   Column,
   Entity,
-  JoinColumn,
-  JoinTable,
   ManyToMany,
-  OneToMany,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -58,4 +58,12 @@ export class Course {
 
   @ManyToMany(() => User, (user) => user.id, { cascade: true })
   Users: User[];
+
+  @ManyToMany(() => Exercise, (exercise) => exercise.id, { cascade: true })
+  Exercise: Exercise[];
+
+  @ManyToOne(() => Subscription, (subscription) => subscription.id, {
+    cascade: true,
+  })
+  Subscription: Subscription[];
 }

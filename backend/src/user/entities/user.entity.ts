@@ -4,10 +4,12 @@ import {
   JoinColumn,
   JoinTable,
   ManyToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { UserType } from '../enum/UserType.enum';
 import { Course } from 'src/courses/entities/course.entity';
+import { Subscription } from 'src/subscriptions/entities/subscription.entity';
 
 @Entity({ name: 'User' })
 export class User {
@@ -61,6 +63,11 @@ export class User {
   statusUser: boolean;
 
   @ManyToMany(() => Course, { cascade: true })
-  @JoinTable({ name: 'curse_id' })
+  @JoinTable({ name: 'curse_users' })
   Courses: Course[];
+
+  @OneToOne(() => Subscription, (subscription) => subscription.id, {
+    cascade: true,
+  })
+  Subscription: Subscription[];
 }
