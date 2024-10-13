@@ -4,8 +4,11 @@ import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import typeorm from './config/typeorm.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PruebaModule } from './prueba/prueba.module';
 import { UserModule } from './user/user.module';
+import { CoursesModule } from './courses/courses.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { ExercisesModule } from './exercises/exercises.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,8 +21,11 @@ import { UserModule } from './user/user.module';
       useFactory: (configService: ConfigService) =>
         configService.get('typeorm'),
     }),
-    PruebaModule,
     UserModule,
+    CoursesModule,
+    SubscriptionsModule,
+    ExercisesModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
