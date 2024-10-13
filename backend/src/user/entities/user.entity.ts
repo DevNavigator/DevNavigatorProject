@@ -1,5 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { UserType } from '../enum/UserType.enum';
+import { Course } from 'src/courses/entities/course.entity';
 
 @Entity({ name: 'User' })
 export class User {
@@ -51,4 +59,8 @@ export class User {
 
   @Column({ type: 'boolean', default: false })
   statusUser: boolean;
+
+  @ManyToMany(() => Course, { cascade: true })
+  @JoinTable({ name: 'curse_id' })
+  Courses: Course[];
 }

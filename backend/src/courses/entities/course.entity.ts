@@ -3,6 +3,8 @@ import {
   Column,
   Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -54,7 +56,6 @@ export class Course {
   })
   status_courses: boolean;
 
-  @OneToMany(() => User, (User: User) => User.id, { cascade: true })
-  @JoinColumn({ name: 'user_id' })
+  @ManyToMany(() => User, (user) => user.id, { cascade: true })
   Users: User[];
 }
