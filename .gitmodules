@@ -1,3 +1,7 @@
 [submodule "DevNavigatorBackend"]
 	path = DevNavigatorBackend
 	url = https://github.com/DevNavigator/DevNavigatorBackend.git
+
+[submodule "DevNavigatorFrontend"]
+	path = DevNavigatorFrontend
+	url = https://github.com/DevNavigator/DevNavigatorFrontend.git
