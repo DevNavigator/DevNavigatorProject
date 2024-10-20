@@ -89,7 +89,8 @@
 <h2>Historias de Usuario</h2>
 <ul>
   <li><strong>Usuario Invitado</strong>: Acceso a vista previa de módulos.</li>
-  <li><strong>Usuario Registrado</strong>: Acceso a módulos y contenido premium.</li>
+  <li><strong>Usuario Registrado</strong>: Acceso a módulos basicos.</li>
+  <li><strong>Usuario Subscrito</strong>: Acceso a módulos y contenido premium.</li>
   <li><strong>Usuario Administrador</strong>: Gestión de accesos y contenido.</li>
   <li><strong>Usuario Superadmin</strong>: Gestión completa de la plataforma.</li>
 </ul>
